@@ -122,9 +122,9 @@
             "exec:tsCompile",
             "copy"
         ];
-        if (!process.env.iOS) {
-            tasks.splice(2, 0, "exec:build_android_aar");
-        }
+        // if (!process.env.iOS) {
+        //     tasks.splice(2, 0, "exec:build_android_aar");
+        // }
 
         grunt.task.run(tasks);
     });
@@ -162,7 +162,7 @@
 
     grunt.registerTask("publish", [
         "build",
-        "lint",
-        "exec:npm_publish"
+        "lint"
+        // "exec:npm_publish"
     ]);
 };

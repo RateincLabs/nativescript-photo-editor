@@ -42,7 +42,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-bin
+# bin
 obj
 .vs
 .tscache
@@ -56,5 +56,3 @@ demo/platforms
 demo/lib
 !karma.conf.js
 !webpack.*.js
-!photo-editor.ios.js
-!photo-editor.android.js

@@ -17,7 +17,7 @@ cache:
   - "$HOME/.gradle/caches/"
   - "$HOME/.gradle/wrapper/"
 install:
-- echo no | npm install -g nativescript
+- echo no | npm install -g nativescript@6.5.0
 - tns usage-reporting disable
 - tns error-reporting disable
 - echo no | npm install -g grunt-cli

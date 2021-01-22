@@ -1,0 +1,43 @@
+{
+	"name": "nativescript-photo-editor",
+	"version": "1.2.0",
+	"description": "A NativeScript plugin for editing your photos (crop, draw, add text, etc.)",
+	"main": "photo-editor",
+	"typings": "photo-editor.d.ts",
+	"nativescript": {
+		"platforms": {
+			"ios": "6.5.4",
+			"android": "6.5.3"
+		},
+		"plugin": {
+			"nan": "true",
+			"pan": "true",
+			"core3": "true",
+			"category": "Interface"
+		}
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/PeterStaev/nativescript-photo-editor"
+	},
+	"scripts": {
+		"tslint": "tslint --project tsconfig.json",
+		"tsc": "tsc --project tsconfig.json",
+		"demo-ios": "grunt build && cd demo && tns run ios",
+		"demo-android": "grunt build && cd demo && tns run android"
+	},
+	"keywords": [
+		"NativeScript",
+		"photo editor",
+		"image editor",
+		"crop",
+		"draw",
+		"add text",
+		"tangra"
+	],
+	"author": "Rateinc <devswert@rateinc.cl>",
+	"license": "Apache-2.0",
+	"peerDependencies": {
+		"tns-core-modules": "6.5.20"
+	}
+}
