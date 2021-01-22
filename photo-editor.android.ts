@@ -10,9 +10,9 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ***************************************************************************** */
-import * as application from "tns-core-modules/application";
-import { path, knownFolders, File } from "tns-core-modules/file-system";
-import { ImageSource, fromFile } from "tns-core-modules/image-source";
+import * as application from "application";
+import { path, knownFolders, File } from "file-system";
+import { ImageSource, fromFile } from "image-source";
 
 import { EditPhotoOptions, PhotoEditor as PhotoEditorBase, PhotoEditorControl } from ".";
 

@@ -10,7 +10,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ***************************************************************************** */
-import { ImageSource } from "tns-core-modules/image-source";
+import { ImageSource } from "image-source";
 
 export const enum PhotoEditorControl {
     Crop = 0,
