@@ -10,9 +10,9 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ***************************************************************************** */
-import * as application from "application";
-import { path, knownFolders, File } from "file-system";
-import { ImageSource, fromFile } from "image-source";
+import * as application from "tns-core-modules/application";
+import { path, knownFolders, File } from "tns-core-modules/file-system";
+import { ImageSource, fromFile } from "tns-core-modules/image-source";
 
 import { EditPhotoOptions, PhotoEditor as PhotoEditorBase, PhotoEditorControl } from ".";
 
@@ -36,7 +36,7 @@ export class PhotoEditor implements PhotoEditorBase {
             this._sourceTempFilePath = path.join(knownFolders.temp().path, `${(new Date()).getTime()}.jpg`);
 
             options.imageSource.saveToFile(this._sourceTempFilePath, "jpg");
-            
+
             const intent = new android.content.Intent(application.android.foregroundActivity, com.tangrainc.photoeditor.PhotoEditorActivity.class);
             intent.putExtra("selectedImagePath", this._sourceTempFilePath);
             intent.putExtra("isCropIn", options.hiddenControls.indexOf(PhotoEditorControl.Crop) === -1);
@@ -44,7 +44,7 @@ export class PhotoEditor implements PhotoEditorBase {
             intent.putExtra("isTextIn", options.hiddenControls.indexOf(PhotoEditorControl.Text) === -1);
             intent.putExtra("isSaveIn", false);
             intent.putExtra("isClearIn", options.hiddenControls.indexOf(PhotoEditorControl.Clear) === -1);
-            application.android.foregroundActivity.startActivityForResult(intent, PhotoEditor.EDIT_PHOTO_REQUEST);    
+            application.android.foregroundActivity.startActivityForResult(intent, PhotoEditor.EDIT_PHOTO_REQUEST);
         });
     }
 
