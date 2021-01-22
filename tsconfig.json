@@ -2,16 +2,15 @@
     "compilerOptions": {
         "noEmitOnError": true,
         "noEmitHelpers": true,
-        "noUnusedLocals": true,
         "experimentalDecorators": true,
-        "noLib": false,
-        "sourceMap": false,
         "target": "es5",
         "module": "commonjs",
         "outDir": "bin/dist",
+        "moduleResolution": "node",
         "lib": [
             "es6",
-            "dom"
+            "dom",
+            "es2015.iterable"
         ],
         "rootDir": ".",
         "baseUrl": ".",
@@ -21,10 +20,10 @@
                 "./node_modules/*"
             ]
         }
-    }, 
+    },
     "exclude": [
-        "node_modules", 
-        "demo", 
+        "node_modules",
+        "demo",
         "bin"
     ]
 }
