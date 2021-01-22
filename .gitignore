@@ -48,6 +48,8 @@ obj
 .tscache
 *.user
 *.js
+!bin/dist/photo-editor.ios.js
+!bin/dist/photo-editor.android.js
 *.map
 !gruntfile.js
 node_modules
