@@ -28,7 +28,7 @@ export class PhotoEditor implements PhotoEditorBase {
         const nativeHiddenControls: control[] = [control.Sticker, control.Share, control.Save];
 
         options.hiddenControls = options.hiddenControls || [];
-        
+
         for (const hiddenControl of options.hiddenControls) {
             switch (hiddenControl) {
                 case PhotoEditorControl.Crop:
@@ -63,7 +63,10 @@ export class PhotoEditor implements PhotoEditorBase {
             viewController.hiddenControls = nativeHiddenControls as any;
             viewController.photoEditorDelegate = this._delegate;
 
-            frame.topmost().ios.controller.presentViewControllerAnimatedCompletion(viewController, true, null);
+            // @ts-ignore: Por algun motivo no esta en los types
+            frame.Frame.topmost().ios.controller.showViewControllerSender(viewController, null);
+            // @ts-ignore: Por algun motivo no esta en los types
+            frame.Frame.topmost().ios.controller.setNavigationBarHiddenAnimated(viewController, true);
         });
     }
 }
@@ -86,14 +89,18 @@ class PhotoEditorDelegateImpl extends NSObject implements PhotoEditorDelegate {
 
     public canceledEditing() {
         this._reject(new Error("User cancelled edit."));
+        // @ts-ignore: Por algun motivo no esta en los types
+        frame.Frame.topmost().ios.controller.popViewControllerAnimated(true);
     }
 
     public doneEditingWithImage(image: UIImage) {
         const result = new ImageSource();
-        
+
         result.setNativeSource(image);
-        
-        this._resolve(result);        
+
+        this._resolve(result);
+        // @ts-ignore: Por algun motivo no esta en los types
+        frame.Frame.topmost().ios.controller.popViewControllerAnimated(true);
     }
 
 }
