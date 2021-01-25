@@ -240,6 +240,6 @@ declare const enum control {
 	Clear = 6
 }
 
-declare var iOSPhotoEditorVersionNumber: number;
+declare var RateinciOSPhotoEditorVersionNumber: number;
 
-declare var iOSPhotoEditorVersionString: interop.Reference<number>;
+declare var RateinciOSPhotoEditorVersionString: interop.Reference<number>;
