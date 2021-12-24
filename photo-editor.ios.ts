@@ -10,8 +10,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ***************************************************************************** */
-import { ImageSource } from "image-source";
-import * as frame from "ui/frame";
+import { ImageSource, Frame } from "@nativescript/core";
 
 import { EditPhotoOptions, PhotoEditor as PhotoEditorBase, PhotoEditorControl } from ".";
 
@@ -64,13 +63,14 @@ export class PhotoEditor implements PhotoEditorBase {
             viewController.photoEditorDelegate = this._delegate;
 
             // @ts-ignore: Por algun motivo no esta en los types
-            frame.Frame.topmost().ios.controller.showViewControllerSender(viewController, null);
+            Frame.topmost().ios.controller.showViewControllerSender(viewController, null);
             // @ts-ignore: Por algun motivo no esta en los types
-            frame.Frame.topmost().ios.controller.setNavigationBarHiddenAnimated(viewController, true);
+            Frame.topmost().ios.controller.setNavigationBarHiddenAnimated(viewController, true);
         });
     }
 }
 
+@NativeClass()
 @ObjCClass(PhotoEditorDelegate)
 class PhotoEditorDelegateImpl extends NSObject implements PhotoEditorDelegate {
     private _resolve: (imagesSource: ImageSource) => void;
