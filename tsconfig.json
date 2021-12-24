@@ -26,6 +26,9 @@
             "type": "raw"
         }]
     },
+    "files": [
+        "./references.d.ts"
+    ],
     "exclude": [
         "node_modules",
         "demo",
